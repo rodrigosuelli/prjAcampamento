@@ -3,6 +3,8 @@ public class Acampamento {
     private char equipe;
     private int idade;
 
+    //gets sets
+
     public String getNome() {
         return nome;
     }
@@ -27,20 +29,24 @@ public class Acampamento {
         this.idade = idade;
     }
 
-    public void imprimir() {
-        System.out.println("nome = " + nome);
-        System.out.println("equipe = " + equipe);
-        System.out.println("idade = " + idade);
-        System.out.println("===================================");
-    }
-
-    public void separarGrupo() {
-        if (idade >= 6 && idade <= 10) {
+    //métodos pedidos
+    public void separarGrupo(){
+        if(idade < 6){
+            equipe = '-';
+        } else if (idade <11) {
             equipe = 'A';
-        } else if (idade >= 11 && idade <= 20) {
+        } else if (idade <21) {
             equipe = 'B';
-        } else if (idade >= 21) {
+        }else{
             equipe = 'C';
         }
+    }
+    @Override
+    public String toString() {
+        return "Acampamento{" + "\n" +
+                "nome='" + nome + '\'' + "\n" +
+                "equipe=" + equipe + "\n" +
+                "idade=" + idade + "\n" +
+                '}';
     }
 }
